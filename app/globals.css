@@ -50,6 +50,12 @@
 
 .swiper-pagination-bullet-active {
   background: #CFFF55 !important;
-  width: 70px !important;
+  width: 90px !important;
   
 }
+body {
+  font-family: var(--font-chakra);
+}
+
+
+

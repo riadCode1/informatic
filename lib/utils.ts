@@ -1,13 +1,20 @@
+<<<<<<< HEAD
 /* eslint-disable no-prototype-builtins */
 import { type ClassValue, clsx } from "clsx";
 
 import { twMerge } from "tailwind-merge";
 import { z } from "zod";
+=======
+import { ClassValue, clsx } from "clsx";
+import { number } from "framer-motion";
+import { twMerge } from "tailwind-merge";
+>>>>>>> dd10eae9ad18829bcc2ffecbe9e0c18de634238e
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
+<<<<<<< HEAD
 // FORMAT DATE TIME
 export const formatDateTime = (dateString: Date) => {
   const dateTimeOptions: Intl.DateTimeFormatOptions = {
@@ -113,3 +120,22 @@ export function getAccountTypeColors(type: AccountTypes) {
   }
 }
 
+=======
+
+export const generatePagination = (currentPage:number, totalPages: number)=>{
+  if(totalPages<=7){
+      return Array.from({length:totalPages},(_,i)=>i+1);
+
+  } 
+    if(currentPage<=4){
+        return [1,2,3,4,5,'...',totalPages-1,totalPages];
+    }
+
+    if  (currentPage>=totalPages-3){
+        return [1,2,'...',totalPages-4,totalPages-3,totalPages-2,totalPages-1,totalPages];
+    }
+
+    return [1,'...',currentPage-1,currentPage,currentPage+1,'...',totalPages];
+
+}
+>>>>>>> dd10eae9ad18829bcc2ffecbe9e0c18de634238e

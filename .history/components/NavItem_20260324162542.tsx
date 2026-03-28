@@ -7,11 +7,19 @@ import { PlaceholdersAndVanishInputDemo } from "./Searchbar";
 import Image from "next/image";
 import Link from "next/link";
 
+<<<<<<< HEAD
 export function NavbarDemo({ avatar, username }: { avatar?: string; username: string }) {
   return <Navbar avatar={avatar} username={username} />;
 }
 
 function Navbar({ className, avatar, username }: { className?: string; avatar?: string; username: string }) {
+=======
+export function NavbarDemo() {
+  return <Navbar />;
+}
+
+function Navbar({ className }: { className?: string }) {
+>>>>>>> dd10eae9ad18829bcc2ffecbe9e0c18de634238e
   const [active, setActive] = useState<string | null>(null);
   const [openMenu, setOpenMenu] = useState(false);
 
@@ -23,7 +31,10 @@ function Navbar({ className, avatar, username }: { className?: string; avatar?: 
         className="lg:hidden fixed top-5 right-1 z-[1000] cursor-pointer"
       >
         <img src="/nav.svg" alt="menu" className="size-8" />
+<<<<<<< HEAD
     
+=======
+>>>>>>> dd10eae9ad18829bcc2ffecbe9e0c18de634238e
       </div>
 
       {/* ================= MOBILE SLIDE MENU ================= */}
@@ -34,7 +45,10 @@ function Navbar({ className, avatar, username }: { className?: string; avatar?: 
         )}
         onClick={() => setOpenMenu(false)}
       />
+<<<<<<< HEAD
       
+=======
+>>>>>>> dd10eae9ad18829bcc2ffecbe9e0c18de634238e
 
       <aside
         className={cn(
@@ -52,7 +66,10 @@ function Navbar({ className, avatar, username }: { className?: string; avatar?: 
         >
           <img src="/close.svg" alt="close" className="size-7" />
         </div>
+<<<<<<< HEAD
          <h1  className="font-bold uppercase mb-5">Welcome, {username || "Guest"} !</h1>
+=======
+>>>>>>> dd10eae9ad18829bcc2ffecbe9e0c18de634238e
 
         {/* Mobile Menu Content (COLUMNS) */}
         <Link className=" cursor-pointer" href={"/"}>
@@ -113,11 +130,16 @@ function Navbar({ className, avatar, username }: { className?: string; avatar?: 
             priority // loads with high priority
             // automatic blur for imported images
           />
+<<<<<<< HEAD
      {avatar ? (
 
         <img style={{width:30,height:30,objectFit:"cover",borderRadius:50}} src={avatar} alt="Avatar" />
       ) : (
  <Link href={"/signUp"}>
+=======
+      <Link href={"/signUp"}>
+      
+>>>>>>> dd10eae9ad18829bcc2ffecbe9e0c18de634238e
        <Image
             src="/profile.svg"
             alt="Local example"
@@ -128,8 +150,12 @@ function Navbar({ className, avatar, username }: { className?: string; avatar?: 
             priority // loads with high priority
             // automatic blur for imported images
           />
+<<<<<<< HEAD
  </Link>
       )}
+=======
+      </Link>
+>>>>>>> dd10eae9ad18829bcc2ffecbe9e0c18de634238e
           
 
            <Image

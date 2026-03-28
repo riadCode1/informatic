@@ -8,21 +8,23 @@ export const createSessionClient = async () => {
     .setEndpoint(process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT!)
     .setProject(process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID!);
 
-  const cookieStore = await cookies();
+  const cookieStore = await cookies(); // ✅ MUST await
   const session = cookieStore.get("appwrite-session");
 
-  // ✅ Only set session if it exists
-  if (session?.value) {
-    client.setSession(session.value);
+  if (!session?.value) {
+    throw new Error("No session");
   }
+
+  client.setSession(session.value);
 
   return {
     account: new Account(client),
     database: new Databases(client),
-    storage: new Storage(client),
-    avatars: new Avatars(client),
+    storage : new Storage(client),
+    avatars: new Avatars(client)
   };
 };
+
 export async function createAdminClient() {
   const client = new Client()
     .setEndpoint(process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT!)

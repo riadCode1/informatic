@@ -19,17 +19,12 @@ export default function SwiperItems({
   items,
   reverse,
   reverseTrue,
-<<<<<<< HEAD
   className,
   posts,
-=======
-  className
->>>>>>> dd10eae9ad18829bcc2ffecbe9e0c18de634238e
 }: {
   items: React.ReactNode[];
   reverse: string;
   reverseTrue:boolean,
-<<<<<<< HEAD
   className:string,
   posts?:Array<{
     $id: string;
@@ -45,13 +40,6 @@ export default function SwiperItems({
   return (
     <>
   <div className={cn(" lg:overflow-hidden   mt-5 ", className)} > 
-=======
-  className:string
-}) {
-  return (
-    <>
-  <div className={cn(" lg:w-[110%]  overflow-hidden mt-5 ", className)} > 
->>>>>>> dd10eae9ad18829bcc2ffecbe9e0c18de634238e
       {/* Corner decorations */}
 
       {/* Swiper */}
@@ -70,17 +58,12 @@ export default function SwiperItems({
         loop={true}
         grabCursor={true}
         effect="cards"
-<<<<<<< HEAD
         className=" lg:w-[110%] overflow-hidden "
-=======
-        className=" w-full  "
->>>>>>> dd10eae9ad18829bcc2ffecbe9e0c18de634238e
          breakpoints={{
     0: {
       slidesPerView: 1,
     },
     640: {
-<<<<<<< HEAD
       slidesPerView: 3,
        // sm screens
     },
@@ -94,49 +77,24 @@ export default function SwiperItems({
             <div className="relative flex   items-center justify-center rounded-2xl p-6 ">
               {/* Background gradient + glow */}
               
-=======
-      slidesPerView: 3, // sm screens
-    },
-    1024: {
-      slidesPerView: 5, // lg screens
-    },
-  }}
-      >
-        {items.map((s, i) => (
-          <SwiperSlide  className=" w-full items-center text-center " key={i}>
-            <div className="relative flex  items-center justify-center rounded-2xl p-6 ">
-              {/* Background gradient + glow */}
-              <div className={s.className} />
->>>>>>> dd10eae9ad18829bcc2ffecbe9e0c18de634238e
 
               {/* Inner glow */}
               <div className="absolute inset-0 rounded-2xl  opacity-20 blur-[120px]" />
 
               {/* Your image */}
-<<<<<<< HEAD
 <img
   src={s.thumbnail}
   alt="keyboard"
   className="w-48 h-48 object-cover  z-10"
 />
-=======
-              <img src={s.image} alt="keyboard" className="relative z-10" />
-
->>>>>>> dd10eae9ad18829bcc2ffecbe9e0c18de634238e
               {/* Discount badge */}
               <div className="absolute top-2 left-2 z-20 bg-red-500 text-white sm:text-sm text-xl font-bold sm:px-2 sm:py-1 px-4 py-2 rounded-xl">
                 -20%
               </div>
             </div>
-<<<<<<< HEAD
             <div className=" mt-5 font-bold text-end text-4xl sm:text-xl ">{s.title}</div>
             <div className=" mt-2 text-md h-5 sm:text-sm text-end text-[#D3DDBC]">
               {s.prompt}
-=======
-            <div className=" mt-5 font-bold text-start text-4xl sm:text-xl ">{s.name}</div>
-            <div className=" mt-2 text-md sm:text-sm text-start text-[#D3DDBC]">
-              {s.description}
->>>>>>> dd10eae9ad18829bcc2ffecbe9e0c18de634238e
             </div>
 
             <div className=" flex-row flex text-start gap-2 mt-10">

@@ -30,18 +30,10 @@ export function ButtonExp({
   [key: string]: unknown;
 }) {
   return (
-    <div
-      className={cn(
-        "bg-transparent relative text-xl p-[1px] overflow-hidden md:col-span-2 md:row-span-1",
-        containerClassName,
-      )}
-      style={{
-        borderRadius: borderRadius,
-      }}
+    <Component
+      className={containerClassName}
       {...otherProps}
     >
-        <div>
-        
       <div
         className="absolute inset-0"
         style={{ borderRadius: `calc(${borderRadius} * 0.96)` }}
@@ -67,8 +59,7 @@ export function ButtonExp({
       >
         {children}
       </div>
-      </div>
-    </div>
+    </Component>
   );
 }
 

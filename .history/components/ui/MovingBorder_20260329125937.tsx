@@ -27,10 +27,10 @@ export function ButtonExp({
   borderClassName?: string;
   duration?: number;
   className?: string;
-  [key: string]: unknown;
+  [key: string]: any;
 }) {
   return (
-    <div
+    <Component
       className={cn(
         "bg-transparent relative text-xl p-[1px] overflow-hidden md:col-span-2 md:row-span-1",
         containerClassName,
@@ -68,7 +68,7 @@ export function ButtonExp({
         {children}
       </div>
       </div>
-    </div>
+    </Component>
   );
 }
 
@@ -83,9 +83,8 @@ export const MovingBorder = ({
   duration?: number;
   rx?: string;
   ry?: string;
-  [key: string]: unknown;
-}) => {
-  const pathRef = useRef<SVGRectElement>(null);
+} & Record<string, unknown>) => {
+  const pathRef = useRef<any>(null);
   const progress = useMotionValue<number>(0);
 
   useAnimationFrame((time) => {

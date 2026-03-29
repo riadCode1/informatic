@@ -166,7 +166,7 @@ export const logoutAccount = async () => {
   try {
     const { account } = await createSessionClient();
 
-    (await cookies()).delete('appwrite-session');
+    cookies().delete('appwrite-session');
 
     await account.deleteSession('current');
   } catch (error) {
@@ -213,9 +213,9 @@ export async function createVideoPost(
     );
 
     return newPost;
-  } catch (error: unknown) {
-    console.error("Creation Error:", error instanceof Error ? error.message : "Unknown error");
-    throw new Error(error instanceof Error ? error.message : "Failed to create video post");
+  } catch (error: Error) {
+    console.error("Creation Error:", error.message);
+    throw new Error(error.message || "Failed to create video post");
   }
 }
 
@@ -276,14 +276,14 @@ export async function getFilePreview(
     // This ensures Appwrite Database accepts it as a 'URL' attribute
     return fileUrl;
 
-  } catch (error: unknown) {
+  } catch (error: Error) {
     console.error("Get File Preview Error:", error);
-    throw new Error(error instanceof Error ? error.message : "An unknown error occurred while fetching the file URL");
+    throw new Error(error.message || "An unknown error occurred while fetching the file URL");
   }
 }
 
 
-export async function generateFileUrl(fileId: string, type: FileType): Promise<string> {
+export async function generateFileUrl(fileId: string, type: FileType): string {
 
 
   if (type === "video") {
@@ -307,9 +307,9 @@ export async function getAllPosts() {
     );
 
     return posts.documents;
-  } catch (error: unknown) {
+  } catch (error: Error) {
     console.error("Get All Posts Error:", error);
-    throw new Error(error instanceof Error ? error.message : "Failed to fetch posts");
+    throw new Error(error.message || "Failed to fetch posts");
   }
 }
 
@@ -329,9 +329,9 @@ export async function getUserPosts(userId: string | number | boolean | QueryType
     );
 
     return posts.documents;
-  } catch (error: unknown) {
+  } catch (error: Error) {
     console.error("Get User Posts Error:", error);
-    throw new Error(error instanceof Error ? error.message : "Failed to fetch user posts" );
+    throw new Error(error.message || "Failed to fetch user posts" );
   }
 }
 
@@ -351,8 +351,8 @@ export async function deleteVideoPost(postId: string) {
 revalidatePath("/");
     return { success: true };
     
-  } catch (error: unknown) {
-    console.error("Deletion Error:", error instanceof Error ? error.message : "Unknown error");
-    throw new Error(error instanceof Error ? error.message : "Failed to delete video post");
+  } catch (error: Error) {
+    console.error("Deletion Error:", error.message);
+    throw new Error(error.message || "Failed to delete video post");
   }
 }

@@ -117,10 +117,10 @@ const ProductItems = ({title,itemsPerPage,currentPage}:DropdownItemsProps) => {
 
             <div className=" flex-wrap flex text-start gap-2 mt-10">
               <RatingStars
-               
+                total={5}
                 ratings={s.rating}
-                
-               
+                size={30}
+                color="#22c55e"
               />
               <h4 className=" text-gray-400">(155)</h4>
 

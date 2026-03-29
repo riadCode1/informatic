@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
-
-export default function DropdownItems({title}:{title:string}) {
+s
+export default function DropdownItems({title}:{titel:string}) {
   const [open, setOpen] = useState(false);
 
   return (

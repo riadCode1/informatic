@@ -50,7 +50,7 @@
        key={index}
        page={page}
        isActive={currentPage === page}
-       href={typeof page === "string" && page === "..." ? "#" : createPageUrl(page as number)}
+       href={page === "..." ? "#" : createPageUrl(page)}
        position={position}
      />
    );
@@ -92,7 +92,7 @@
    "rounded-md": position==="single",
   }
   )
-  return isActive ? (
+  return isActive|| position==="" ? (
    <div className={className}>{page}</div>
   ) : (
    <Link href={href} className={className}>{page}</Link>

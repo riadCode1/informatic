@@ -1,15 +1,13 @@
 import {heroui} from '@heroui/theme';
 import type { Config } from "tailwindcss";
 
-const svgToDataUri = require("mini-svg-data-uri");
+import svgToDataUri from "mini-svg-data-uri";
+import animatePlugin from "tailwindcss-animate";
 
-const colors = require("tailwindcss/colors");
-const {
-  default: flattenColorPalette,
-} = require("tailwindcss/lib/util/flattenColorPalette");
+import { default as flattenColorPalette } from "tailwindcss/lib/util/flattenColorPalette";
 
 const config = {
-  darkMode: ["class"],
+  darkMode: ["class", ".dark"],
   content: [
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
@@ -172,7 +170,7 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate"),addVariablesForColors,function ({ matchUtilities,theme }: any) {
+  plugins: [animatePlugin,addVariablesForColors,function ({ matchUtilities,theme }: any) {
       matchUtilities(
         {
           "bg-grid": (value: any) => ({
@@ -189,9 +187,9 @@ const config = {
     },heroui()],
 } satisfies Config;
 
-function addVariablesForColors({ addBase, theme }: any) {
-  let allColors = flattenColorPalette(theme("colors"));
-  let newVars = Object.fromEntries(
+function addVariablesForColors({ addBase, theme }: { addBase: (base: Record<string, any>) => void; theme: (path: string) => Record<string, any> }) {
+  const allColors = flattenColorPalette(theme("colors"));
+  const newVars = Object.fromEntries(
     Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
   );
 

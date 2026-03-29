@@ -283,7 +283,7 @@ export async function getFilePreview(
 }
 
 
-export async function generateFileUrl(fileId: string, type: FileType): Promise<string> {
+export async function generateFileUrl(fileId: string, type: FileType): string {
 
 
   if (type === "video") {

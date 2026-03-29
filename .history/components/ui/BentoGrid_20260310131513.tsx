@@ -1,8 +1,13 @@
 // Also install this npm i --save-dev @types/react-lottie
 "use client";
 import { cn } from "@/lib/utils";
+import { BgAnimation } from "./BgAnimation";
+import { GlobeGrid } from "./GlobeGrid";
 import { useState } from "react";
-
+import Lottie from "react-lottie";
+import animationData from "@/lib/confetti.json";
+import MagicButton from "./MagicButton";
+import { IoCopyOutline } from "react-icons/io5";
 
 export const BentoGrid = ({
   className,

@@ -1,6 +1,6 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import SwiperItems from "./SwiperItems";
-
+import { offerItems } from "@/lib/data";
 import Link from "next/link";
 
 const LimitedOffers = () => {
@@ -24,7 +24,7 @@ const LimitedOffers = () => {
           </button>
         </Link>
       </div>
-      <SwiperItems className="pl-20"  reverse={""} reverseTrue={false}  />
+      <SwiperItems className="pl-20" items={offerItems} />
     </div>
   );
 };

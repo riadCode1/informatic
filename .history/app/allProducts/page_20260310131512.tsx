@@ -22,7 +22,7 @@ const itemPerPage = 4
   
   return (
     <div className=' p-10 '>
-      <Nav username={''}/>
+      <Nav/>
 
     <ProductSearchBar/>
 

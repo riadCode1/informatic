@@ -23,7 +23,7 @@ export default async function MostPopular() {
          <h1 dir='ltr'  className=' ml-10 text-white font-bold md:text-2xl lg:text-3xl'>MOST POPULAR</h1>
          
 
- <SwiperItems posts={transformedPosts} className="shadow-[-6px_0_10px_rgba(0,0,0,0.15)] lg:pr-20  " reverseTrue={true} reverse="rtl" />
+ <SwiperItems posts={transformedPosts} className="shadow-[-6px_0_10px_rgba(0,0,0,0.15)] lg:pr-20 bg-amber-700 " reverseTrue={true} reverse="rtl" />
      
      </div>
    )

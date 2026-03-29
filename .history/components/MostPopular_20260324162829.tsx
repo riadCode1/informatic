@@ -8,22 +8,12 @@ export default async function MostPopular() {
   const loggedIn = await getLoggedInUser();
 
    const userPosts = await getUserPosts(loggedIn?.$id);
-  
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const transformedPosts = posts.map((post: any) => ({
-    $id: post.$id,
-    title: post.title,
-    prompt: post.prompt,
-    thumbnail: post.thumbnail,
-    video: post.video,
-  }));
-  
   return (
      <div dir='rtl'  className=' px-5  w-full overflow-hidden mt-50 uppercase'>
          <h1 dir='ltr'  className=' ml-10 text-white font-bold md:text-2xl lg:text-3xl'>MOST POPULAR</h1>
          
 
- <SwiperItems posts={transformedPosts} className="shadow-[-6px_0_10px_rgba(0,0,0,0.15)] lg:pr-20  " reverseTrue={true} reverse="rtl" />
+ <SwiperItems posts={posts} className="lg:pr-20 " reverseTrue={true} reverse="rtl" items={mostPopular}/>
      
      </div>
    )

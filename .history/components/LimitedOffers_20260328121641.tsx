@@ -1,9 +1,21 @@
 import React from "react";
 import SwiperItems from "./SwiperItems";
-
+import { offerItems } from "@/lib/data";
 import Link from "next/link";
 
-const LimitedOffers = () => {
+type OfferItem = {
+  image: string;
+  alt: string;
+  className: string;
+  caption: string;
+  name: string;
+  description: string;
+  rating: number;
+  price: string;
+  oldPrice: string;
+};
+
+const LimitedOffers = ({OfferItem}: {OfferItem: OfferItem}) => {
   return (
     <div className="  mt-25 overflow-hidden uppercase">
       <div className=" flex flex-row px-20 items-center justify-between">
@@ -24,7 +36,7 @@ const LimitedOffers = () => {
           </button>
         </Link>
       </div>
-      <SwiperItems className="pl-20"  reverse={""} reverseTrue={false}  />
+      <SwiperItems className="pl-20" items={[]} reverse={""} reverseTrue={false}  />
     </div>
   );
 };

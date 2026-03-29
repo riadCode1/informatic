@@ -99,16 +99,15 @@ export default function SwiperItems({
 
             <div className=" flex-row flex text-start gap-2 mt-10">
               <RatingStars
-                
-                ratings={4.5}
-                
-                
+                ratings={s.rating}
+                size={30}
+                color="#22c55e"
               />
               <h4 className=" text-gray-400">(155)</h4>
 
                <div className=" ml-2 gap-1 flex flex-row">
-              15£
-              <span className=" line-through text-[#FFA199]">25£</span>
+              {s.price}
+              <span className=" line-through text-[#FFA199]">{s.oldPrice}</span>
             </div>
             </div>
            

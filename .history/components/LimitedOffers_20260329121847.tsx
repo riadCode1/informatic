@@ -24,7 +24,7 @@ const LimitedOffers = () => {
           </button>
         </Link>
       </div>
-      <SwiperItems className="pl-20"  reverse={""} reverseTrue={false}  />
+      <SwiperItems className="pl-20"  />
     </div>
   );
 };

@@ -328,7 +328,7 @@ export async function getUserPosts(userId: string | number | boolean | QueryType
       [Query.equal("creator", userId)]
     );
 
-    return posts?.documents;
+    return posts.documents;
   } catch (error: unknown) {
     console.error("Get User Posts Error:", error);
     throw new Error(error instanceof Error ? error.message : "Failed to fetch user posts" );
